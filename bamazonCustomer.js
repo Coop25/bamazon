@@ -40,7 +40,7 @@ function afterCon(){
                 getProducts(`SELECT * FROM products`, function (res) {
                     let table = createTable(res);
                     console.clear();
-                    console.log(table.toString()+"\n"+`Your Total is: $${totalPrice}`)
+                    console.log(table.toString()+"\n"+`Your Total is: ${totalPrice}`)
                     con.end();
                 });
             })
