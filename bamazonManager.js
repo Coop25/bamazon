@@ -10,19 +10,17 @@ let choices = [
     colors.red("exit")
 ]
 
-const functions = require("./functions.js");
+const functions = require("./managerMenu.js");
 
-function askQuestions(cb){
-    inquirer.prompt([
-        {
-            type:"list",
-            name: "id",
-            message: "Main Menu:\n------------",
-            choices: choices
-        }
-    ]).then(function(answers) {
+function askQuestions(cb) {
+    inquirer.prompt([{
+        type: "list",
+        name: "id",
+        message: "     Main Menu:\n------------------------",
+        choices: choices
+    }]).then(function (answers) {
         console.clear();
-        functions(answers.id, con, function(){
+        functions(answers.id, con, function () {
             askQuestions();
         })
     })
@@ -42,6 +40,7 @@ let con = mysql.createConnection({
 
 con.connect(function (err) {
     if (err) throw err;
-    console.log("connected as id " + con.threadId);
+    console.clear();
+    // console.log("connected as id " + con.threadId);
     askQuestions();
 });
