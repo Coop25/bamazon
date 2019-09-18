@@ -24,7 +24,7 @@ con.connect(function (err) {
 });
 
 function afterCon(){
-    getProducts(`SELECT * FROM products`, function(res){
+    getProducts(`SELECT * FROM products`, con, function(res){
         let table = createTable(res);
         console.clear();
         console.log(table.toString()+"\n")
@@ -39,8 +39,8 @@ function afterCon(){
                 return console.log("Insufficient quantity!\nOrder Canceled")
             }
             let totalPrice = item[0].price * parseInt(answers.quantity);
-            getProducts(`UPDATE products SET stock_quantity=${ parseInt(item[0].stock_quantity) - parseInt(answers.quantity)} WHERE id=${item[0].id}`, function(resolve){
-                getProducts(`SELECT * FROM products`, function (res) {
+            getProducts(`UPDATE products SET stock_quantity=${ parseInt(item[0].stock_quantity) - parseInt(answers.quantity)} WHERE id=${item[0].id}`, con, function(resolve){
+                getProducts(`SELECT * FROM products`, con, function (res) {
                     let table = createTable(res);
                     console.clear();
                     console.log(table.toString()+"\n"+`Your Total is: ${totalPrice}`)
