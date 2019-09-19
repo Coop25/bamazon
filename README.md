@@ -47,4 +47,4 @@ bamazonSupervisor.js - the Supervisor portal
 ![So there was a gif here ... awkward -_-](https://i.imgur.com/TNc5z0s.gif)
 
 ### note
-thanks to shane from class for showing me how to use innerjoin's on this...  I still dislike SQL but it is a neccicarry evil
+thanks to shane from class for showing me how to use innerjoin's on this...  I still dislike SQL but it is a necessary evil
