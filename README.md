@@ -1,4 +1,6 @@
 # bamazon
+![insert futurama elzar joke here](https://media.giphy.com/media/7offL3yehzrKU/giphy.gif)
+
 this project is sort of a sudo amazon for the console/terminal. it has 3 entry points
 ```
 bamazonCustomer.js - the customer portal
