@@ -88,7 +88,7 @@ function addProduct(con, cb) {
 function addInventory(con, cb) {
     //get and display the data on screen to help the user decide what to update
     getData(con, function () {
-        //ask the user what id to update and how much to add to it 
+        //ask the user what id to update and how much to add to it
         inquirer.prompt([{
             name: "id",
             message: "What is the id of the product you would like to update?\n"

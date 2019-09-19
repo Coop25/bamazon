@@ -1,7 +1,9 @@
+//import packages from npm
 const mysql = require("mysql");
-const asciiTable = require("ascii-table");
 const inquirer = require("inquirer");
 const colors = require("colors");
+
+//define an array of the managers choices
 let choices = [
     colors.green("View Products for Sale"),
     colors.green("View Low Inventory"),
@@ -10,8 +12,10 @@ let choices = [
     colors.red("exit")
 ]
 
+//import the manager function
 const functions = require("./managerMenu.js");
 
+//ask the question of what does the user want to do
 function askQuestions(cb) {
     inquirer.prompt([{
         type: "list",
@@ -38,6 +42,7 @@ let con = mysql.createConnection({
     database: "bamazon"
 });
 
+//connect to the database
 con.connect(function (err) {
     if (err) throw err;
     console.clear();
